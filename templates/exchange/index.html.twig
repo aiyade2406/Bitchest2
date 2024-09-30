@@ -1,0 +1,53 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% block stylesheets %}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="{{ asset('css/exchange.css') }}">  
+{% endblock %}
+
+{% block body %}
+<div class="contain">
+    <div class="left">
+          {% include 'composant/nav.html.twig' %}
+    </div>
+
+    <div class="right">
+      
+
+        <div class="zone_crypto">
+            <div class="zone_crypto_left">
+                <div class="list_crypto">
+                    <h1 class="titre_balance">Transaction History<h1>
+                   <div class="contain_transaction">
+                      <div class="transact">
+                
+                  
+                  
+                      {% for trade in trades %}
+                        <div class="type_date"> 
+                            {% if trade.type== "Purchase" %}
+    <div class="zone_image_vente_green">
+        {% else %} 
+         <div class="zone_image_vente"> 
+{% endif %}
+                          
+                             {% if trade.type == 'Purchase' %}
+
+                        <img src="{{ asset('img/achat.png') }}">
+                        {% else %}
+                        
+          <img src="{{ asset('img/vente.png') }}">
+                        {% endif %}</div><div class="mini_zone_type_date"><p>{{ trade.type }}</p> <p class="text_info">{{ trade.date|date('Y-m-d H:i:s') }}</p></div><div class="zone_quantity"><p class="text_info">{{ trade.quantity }}</p></div><div class="zone_quantity"><p class="text_info">{{ trade.crypto.name }}</p></div>
+            </div>
+            {% endfor %}
+                    
+          
+                    </div>
+                </div>
+                
+            </div>
+           
+        </div>
+    </div>
+</div>
+{% endblock %}

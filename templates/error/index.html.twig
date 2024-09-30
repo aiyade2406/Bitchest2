@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello ErrorController!</title>
+
+{% block body %}
+<style>
+    @font-face {
+    font-family: 'Celias';
+    src: url('/fonts/Celias.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+.contain{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    width:100%;
+      font-family: 'Celias', sans-serif;
+}
+h1{
+    font-size:100px;
+    color:red;
+    
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+     h1{
+    font-size:70px;
+    color:red;
+  }
+
+    
+}
+@media only screen and (max-width: 600px) {
+  h1{
+    font-size:50px;
+    color:red;
+  }
+}
+</style>
+
+<div class="contain">
+<h1>Error 404</h1>
+</div>
+{% endblock %}

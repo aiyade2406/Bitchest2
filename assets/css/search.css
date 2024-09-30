@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Celias';
+    src: url('/fonts/Celias.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    
+.zone_search_profil {
+    font-family: 'Celias', sans-serif;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.zone_search_profil input {
+    height: 30px;
+    border: none;
+    width: 70%;
+    background-color: #ECEFF3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+
+.mini_image_profil {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mini_image_profil img {
+    width: 30px;
+    height: 30px;
+}
+.bouton_out{
+    height:44px;
+  width:44px;
+  border:none;
+   background-color: #ECEFF3;
+}
+.bouton_out {
+    height: 44px;
+    width: 44px;
+    border: none;
+    background-color: #ECEFF3;
+}
+.bouton_out img {
+    height: 22px;
+    width: 22px;
+}

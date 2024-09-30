@@ -1,0 +1,45 @@
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% block stylesheets %}
+ <link rel="stylesheet" href="{{ asset('css/login.css') }}">  
+{% endblock %}
+
+{% block body %}
+
+<div class="zone_title"><div class="mini_logo"><div class="cercle"></div></div><h1 class="bitchest">Bitchest</h1></div>
+<form method="post" class="form_page1">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+<div class="zone_titre_sign">
+    <h1 class="h3 mb-3 font-weight-normal"><div>Sign in</h1>
+    <p>Don't have an account yet? <a href="{{ path('app_register') }}">Sign up here</a><p>
+</div>
+    <div class="zone_input">
+    <label for="inputinfo">Email</label>
+   <input type="text" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email">
+     </div>
+     <div class="zone_input">
+    <label for="inputinfo">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" >
+    </div>
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+<div class="zone_bouton">
+    <button class="bouton-submit" type="submit">
+        Sign in
+    </button>
+    
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'Celias';
+    src: url('/fonts/Celias.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.sidebar {
+    background-color: #ECEFF3;
+    font-family: 'Celias', sans-serif;
+    padding: 20px;
+}
+
+.zone_title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-family: 'Celias', sans-serif;
+}
+
+.mini_logo {
+    width: 30px;
+    height: 30px;
+    background-color:  #38618C;
+    border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:7px;
+}
+
+.cercle {
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    height: 60px;
+    
+}
+
+ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.btn_logout{
+background-color: none;
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+.btn_logout img{
+width: 24px;
+height: 24px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+ 
+    
+}
+@media only screen and (max-width: 600px) {
+    .sidebar{
+        display:flex;
+        flex-direction: column;
+        order:2;
+     }
+     ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    ul li {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-bottom: 20px;
+        height: 30px;
+    }
+    .crypto_zone{
+        font-size:12px;
+        justify-content:space-around;
+    }
+    .crypto_cour{
+       width:none;
+    }
+     .left{
+        width:100%;
+     }
+     .zone_crypto_right{
+        width:100%;
+     }
+     .price_crypto{
+        width:100%;
+        border-radius:0;
+     }
+     .zone_achat {
+        width:100%;
+        border-radius:0;
+     }
+     .zone_search_profil{
+        order:1;
+     }
+}

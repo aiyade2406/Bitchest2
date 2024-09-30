@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+
+<nav class="sidebar">
+    <div class="zone_title">
+        <div class="mini_logo">
+            <div class="cercle"></div>
+        </div>
+        <h1 class="title_bitchest">Bitchest</h1>
+    </div>
+    <ul>  <li><a href="{{ path('app_profile') }}"><img src="{{ asset('img/nav_logo/user-regular.svg') }}">Profile</a></li>
+        <li><a href="{{ path('app_dashboard') }}"><img src="{{ asset('img/nav_logo/gauge-solid.svg') }}">Dashboard</a></li>
+        <li><a href="{{ path('app_portfolio') }}"><img src="{{ asset('img/nav_logo/basket-shopping-solid.svg') }}">Portfolio</a></li>
+        <li><a href="{{ path('app_exchange') }}"><img src="{{ asset('img/nav_logo/right-left-solid.svg') }}">Transaction</a></li>
+        <li><a href="{{ path('app_trade') }}"><img src="{{ asset('img/nav_logo/achat.svg') }}">BUY</a></li>
+                <li><a href="{{ path('app_trade_send') }}"><img src="{{ asset('img/nav_logo/vente.svg') }}">Sell</a></li>
+      
+           <li><a href="{{ path('app_share') }}"><img src="{{ asset('img/nav_logo/transfert.svg') }}">Share Crypto</a></li>
+               <li>
+           <form action="{{ path('app_logout') }}" method="post" class="form_logout">
+        
+    <button type="submit" class="btn_logout">
+        <img src="{{ asset('img/nav_logo/logout.svg') }}" alt="Logout" class="logout">
+        Logout
+    
+    </button>
+</form>
+</li>
+    </ul>
+</nav>

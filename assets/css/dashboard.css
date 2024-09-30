@@ -1,0 +1,467 @@
+@font-face {
+    font-family: 'Celias';
+    src: url('/fonts/Celias.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    margin:0;
+
+}
+.contain{
+width:100%;
+height:150vh;
+font-family: 'Celias', sans-serif;
+    display:flex;
+    background-color:#ECEFF3;
+    margin:0;
+}
+.see_all{
+    color: #38618C;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+.left{
+    height:100%;
+    width:20%;
+
+}
+.right{
+width:80%;
+height:100%;
+
+}
+.zone_dashboard {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.crypto_last{
+    width: 90%;
+    height: 44px;
+    border-radius: 10px;
+    border:1px solid #E0E3E8;
+}
+.left_dashboard{
+background-color:white;
+border-radius:14px;
+width:552px;
+height:350px;
+display:flex;
+flex-direction:column;
+}
+
+.right_dashboard{
+display:flex;
+flex-direction:column;
+width:560px;
+height:350px;
+}
+.right_dashboard .info1{
+display:flex;
+width:100%;
+height:100%;
+justify-content:space-around;
+border-radius: 12px;
+background-color: white;
+}
+.right_dashboard .info1 div{
+width:50%;
+height:100%;
+
+}
+.profit{
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+}
+.profit h1{
+font-size:20px;
+margin-left:20px;
+}
+.profit h2{
+font-size:27px;
+margin-left:20px;
+}
+h2 span{
+font-size:16px;
+color:#6B6E75;
+}
+.zone_balance{
+height:48%;
+width:100%;
+display:flex;
+align-content:center;
+}
+.assets{
+height:48%;
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+ align-items:center;
+justify-content:space-around;
+
+}
+.zone_texte_balance{
+width:50%;
+margin-left:20px;
+display:flex;
+flex-direction:column;
+align-content:center;
+justify-content:center;
+
+}
+
+.zone_texte_balance h1{
+font-size:20px;
+padding:0;
+margin:0;
+
+}
+.zone_texte_balance h2{
+font-size:24px;
+padding:0;
+margin:0;
+}
+.this_asset{
+width:250px;
+height:64px;
+padding:0;
+margin:3px;
+border:1px solid #E0E3E8;
+display:flex;
+justify-content:space-around;
+align-items:center;
+border-radius:15px;
+
+}
+.this_asset h2{
+
+padding:0;
+margin:0;
+font-size:12px;
+}
+.this_asset h3{
+
+padding:0;
+margin:0;
+font-size:12px;
+}
+.mini_zone_price{
+display:flex;
+flex-direction:column;
+
+}
+.mini_zone_crypto{
+width:44px;
+height:44px;
+border-radius:15px;
+background-color:#E0E3E8;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.mini_zone_crypto img{
+width:24px;
+height:24px;
+}
+.title_asset{
+width:100%;
+height:30px;
+display:flex;
+align-items:center;
+
+}
+.title_asset h1{
+font-size:20px;
+margin:0;
+padding:0;
+margin-left:20px;
+font-weight:bold;
+}
+.title_asset p{
+font-size:13px;
+color: #38618C;
+padding:0;
+margin:0;
+margin-left: 340px;
+
+}
+
+.zone_price_crypto {
+        height: 404px;
+        width: 98%;
+        border-radius: 16px;
+        background-color: white;
+        margin-top: 15px;
+        display: flex;
+        flex-direction:column;
+       justify-content: center;
+        align-items: center;
+    }
+    .crypto-card {
+        width: 200px;
+        height: 120px;
+        background-color: #f8f9fa;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+    }
+    .crypto-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .crypto-price {
+        font-size: 16px;
+        color: #007bff;
+    }
+    #myChart{
+        width:800px !important;
+        height:320px !important;
+
+    }
+.top_crypto{
+    width:100%;
+    height:60px;
+      display: flex;
+    justify-content: center;
+
+}
+.top_crypto h1{
+    font-size:20px;
+}
+.profit img{
+width:24px;
+height:24px;
+}
+.zone_logo_last {
+width: 44px !important;
+height: 44px !important;
+border-radius: 14px !important;
+background-color: #E0E3E8 !important;
+display: flex !important;
+justify-content: center !important;
+align-items: center !important;
+margin-left:15px;
+}
+.last_purchase {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background: white;
+   border-bottom-left-radius:10px;
+   border-bottom-right-radius:10px;
+}
+.last_purchase img{
+    width:24px;
+    height:24px;
+}
+.info2{
+
+}
+.info2 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.right_dashboard .info1 div {
+    width: 50%;
+    height: 100%;
+    border: 1px solid #E0E3E8;
+    border-radius: 12px;
+}
+
+
+
+@media only screen and (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+
+    .contain{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .right{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .zone_dashboard{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .assets {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: auto;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+    }
+    .title_asset p{
+        margin-left:20px;
+    }
+    .left_dashboard{
+        width: auto;
+        border:1px solid  #E0E3E8;
+    }
+    .right_dashboard{
+        width: 100%;
+        border:1px solid  #E0E3E8;
+        height: 200px;
+    }
+    #myChart{
+           width: 100% !important;
+    }
+    .right_dashboard .info1 {
+        background-color: #ECEFF3;
+        border-radius: 0;
+        align-items: center;
+    }
+    .zone_balance {
+        justify-content: center;
+        text-align: center;
+    }
+    .profit{
+        background-color: white;
+        border-radius: 15px;
+        width: 48%;
+        height: 96%;
+    }
+    .zone_balance {
+    font-size: 38px;
+    }
+    .this_asset {
+        width: 98%;
+    }
+    .left_dashboard{
+        border-radius: 0px;
+    }
+    .profit h1 {
+        font-size: 27px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .profit h2 {
+        font-size: 27px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .right_dashboard .info1 div{
+        width: 48%;
+    }
+    .left{
+        width: 100%;
+        height: auto;
+    }
+    ul{
+        display: flex;
+        justify-content: space-around;
+        margin:0;
+    }
+    .zone_title {
+        margin-left:23px;
+        margin-bottom:0;
+    }
+    .sidebar{
+padding:0;
+    }
+    .form_logout{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 600px) {
+.contain{
+    display: flex;
+    flex-direction: column;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.zone_dashboard{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+.assets {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.title_asset p{
+    margin-left:20px;
+}
+.left_dashboard{
+    width: auto;
+    border:1px solid  #E0E3E8;
+}
+.right_dashboard{
+    width: 100%;
+    border:1px solid  #E0E3E8;
+    height: 250px;
+    justify-content: center;
+    background-color: #E0E3E8;
+}
+#myChart{
+       width: 100% !important;
+}
+.right_dashboard .info1 {
+    background-color: #ECEFF3;
+    border-radius: 0;
+    align-items: center;
+    height:82%;
+}
+.zone_balance {
+    justify-content: center;
+    text-align: center;
+}
+.profit{
+    background-color: white;
+    border-radius: 15px;
+    width: 48%;
+    height: 96%;
+}
+.zone_balance {
+font-size: 38px;
+}
+.this_asset {
+    width: 98%;
+}
+.left_dashboard{
+    border-radius: 0px;
+}
+.profit h1 {
+    font-size: 27px;
+    margin-left: 0px;
+    text-align: center;
+}
+.profit h2 {
+    font-size: 27px;
+    margin-left: 0px;
+    text-align: center;
+}
+.right_dashboard .info1 div{
+    width: 48%;
+}
+}

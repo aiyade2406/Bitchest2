@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ asset('css/share.css') }}">
+{% block body %}
+<div class="contain">
+    <div class="left">
+        {% include 'composant/nav.html.twig' %}
+    </div>
+    <div class="right">
+      <div class="title_share">
+       
+        </div>
+      <div class="zone_form">
+         <h1>Share Crypto</h1>
+        {{ form_start(form) }}
+      {{ form_widget(form.quantity, {'attr': {'class': 'input_crypto','placeholder': 'Enter quantity'}}) }}
+            {{ form_widget(form.cryptos, {'attr': {'class': 'input_crypto'}}) }}
+            <div class="zone_transfert">
+              <img src="{{ asset('img/Swap.png') }}">
+              </div>
+           
+               {{ form_widget(form.users, {'attr': {'class': 'input_crypto'}}) }}
+            <button type="submit" class="btn_class">Share Crypto</button> 
+        {{ form_end(form) }}
+                                      {% for message in app.flashes('error') %}
+    <div class="erreur">{{ message }}</div>
+{% endfor %}
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

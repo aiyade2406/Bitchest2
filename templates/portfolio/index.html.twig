@@ -1,0 +1,52 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% block stylesheets %}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="{{ asset('css/portfolio.css') }}">  
+{% endblock %}
+
+{% block body %}
+<div class="contain">
+    <div class="left">
+       {% include 'composant/nav.html.twig' %}
+    </div>
+
+    <div class="right">
+
+
+        <div class="zone_crypto">
+            <div class="zone_crypto_left">
+                <div class="list_crypto">
+                    <h1 class="titre_portfolio">Portfolio<h1>
+                    <ul>
+    {% for wallet in user_wallet %}
+        <div class="li_crypto"><div class="div_crypto_image_texte"><div class="this_crypto">   {% if wallet.cryptos.name == "Bitcoin" %}
+                                <img src="{{ asset('img/logo/bitcoin-btc-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "Ethereum" %}
+                                <img src="{{ asset('img/logo/ethereum-eth-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "Ripple" %}
+                                <img src="{{ asset('img/logo/xrp-xrp-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "Bitcoin Cash" %}
+                                <img src="{{ asset('img/logo/bitcoin-cash-bch-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "Cardano" %}
+                                <img src="{{ asset('img/logo/cardano-ada-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "Litecoin" %}
+                                <img src="{{ asset('img/logo/litecoin-ltc-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "NEM" %}
+                                <img src="{{ asset('img/logo/nem-xem-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "Stellar" %}
+                                <img src="{{ asset('img/logo/stellar-xlm-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "IOTA" %}
+                                <img src="{{ asset('img/logo/iota-iota-logo.png') }}">
+                            {% elseif wallet.cryptos.name == "Dash" %}
+                                <img src="{{ asset('img/logo/dash-dash-logo.png') }}">
+                            {% endif %}</div><li>{{ wallet.cryptos.name }}</li></div><div class="uniter"><li class="quantity">{{ wallet.quantity }} Unit</li></div></div>
+        
+    {% endfor %}
+</ul>
+                </div>
+                
+            </div>
+        
+    </div>
+</div>
+{% endblock %}

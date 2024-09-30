@@ -1,0 +1,31 @@
+{% block stylesheets %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="contain">
+    <div class="zone_form">
+        <h1 class="sign_in">Register</h1>
+
+        {{ form_start(registrationForm) }}
+
+        {{ form_widget(registrationForm.firstName, {'attr': {'class': 'custom_1', 'placeholder': 'Enter your first name'}}) }}
+        <div class="error-message">{{ form_errors(registrationForm.firstName) }}</div>
+
+        {{ form_widget(registrationForm.lastName, {'attr': {'class': 'custom_2', 'placeholder': 'Enter your last name'}}) }}
+        <div class="error-message">{{ form_errors(registrationForm.lastName) }}</div>
+
+        {{ form_widget(registrationForm.email, {'attr': {'class': 'custom_1', 'placeholder': 'Enter your email'}}) }}
+        <div class="error-message">{{ form_errors(registrationForm.email) }}</div>
+
+        {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'custom_2', 'placeholder': 'Enter your password'}}) }}
+        <div class="error-message">{{ form_errors(registrationForm.plainPassword) }}</div>
+
+        {{ form_row(registrationForm.Confirm) }}
+
+        <button type="submit" class="btn">Register</button>
+        {{ form_end(registrationForm) }}
+    </div>
+</div>
+{% endblock %}

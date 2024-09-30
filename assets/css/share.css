@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Celias';
+    src: url('/fonts/Celias.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'Celias', sans-serif;
+    margin:0;
+    padding: 0;
+}
+.contain {
+    width: 100%;
+    font-family: 'Celias', sans-serif;
+    display: flex;
+    background-color: #ECEFF3;
+    margin: 0;
+    height: 100vh;
+}
+
+.left {
+    height: 100%;
+    width: 20%;
+}
+
+.right {
+    height: 100%;
+    width: 80%;
+}
+
+.zone_form{
+    width: 100%;
+    height: 100%;
+    background-color: #38618C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.zone_form h1{
+    color: white;
+}
+form{
+    width:561px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+    justify-content: center;
+    border-radius: 14px;
+}
+a{
+    text-decoration: none;
+    color: #38618C;
+    font-weight: bold;
+}
+.input_crypto{
+    width:501px;
+    height: 44px;
+    border: 1px solid #E0E3E8;
+    margin-top:8px;
+    margin-bottom:8px;
+    border-radius: 10px;
+}
+.btn_class{
+    width: 501px;
+    height: 48px;
+    background-color:  #38618C;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+
+
+
+}
+.zone_transfert{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_logout{
+width: 24px;
+height: 24px;
+}
+
+.erreur {
+    font-size: 12px;
+    color: #FF5964;
+    font-weight: bold;
+    padding: 3px;
+    border: 1px solid #E0E3E8;
+    border-radius: 10px;
+    background-color: white;
+  }
+  .btn_logout{
+    margin-left: 46px;
+  }
+@media only screen and (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+    .right {
+        width: 65%;
+    }
+    form {
+        width: 90%;
+    }
+    .input_crypto {
+        width: 95%;
+    }
+    .btn_class {
+        width: 95%;
+    }
+    .left {
+        width: 35%;
+    }
+} 
+
+@media only screen and (max-width: 600px) {
+    .contain {
+        display: flex;
+        flex-direction: column;
+    }
+    .left {
+        width: 100%;
+    }
+    .right {
+        width: 100%;
+    }
+    form {
+        width: 98%;
+        height: 550px;
+        margin-bottom: 20px;
+    }
+    .input_crypto {
+        width: 95%;
+    }
+    .zone_form {
+        border-top-right-radius: 70px;
+        border-top-left-radius: 70px;
+    }
+    .btn_class {
+        width: 95%;
+    }
+}

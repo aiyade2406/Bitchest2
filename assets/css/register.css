@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Celias';
+    src: url('/fonts/Celias.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+    
+body {
+    margin: 0;
+}
+
+.contain {
+    background-color: #38618C;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Celias', sans-serif;
+    margin: 0;
+}
+
+.zone_form {
+    width: 444px;
+    background-color: white;
+    height: 520px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.custom_1, .custom_2 {
+    width: 384px;
+    height: 44px;
+    border-radius: 5px;
+    border: 1px solid #E0E3E8;
+    margin: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    background-color:  #38618C;
+    color: white;
+    font-size: 13px;
+    width: 384px;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.sign_in {
+    font-size: 24px;
+}
+
+li{
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.error-message ul{
+    margin: 0;
+    padding: 0;
+}
+.error-message ul li{
+ list-style-type: none;
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+
+    
+}
+@media only screen and (max-width: 600px) {
+    .zone_form {
+        width: 80%;
+        
+    }
+    form{
+        width:100%;
+    }
+    .custom_1 {
+        width:80%;
+    }
+    .custom_2{
+        width:80%;
+    }
+    .btn {
+        background-color:  #38618C;
+        color: white;
+        font-size: 13px;
+        width:80%;
+   
+    }
+    
+
+}

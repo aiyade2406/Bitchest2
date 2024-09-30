@@ -1,0 +1,46 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="{{ asset('css/index_admin.css') }}">  
+{% block body %}
+<div class="contain">
+    <div class="zone_dashboard"><h1>Dashboard Admin</h1> 
+       <form action="{{ path('app_logout') }}" method="post" class="form_logout">       
+    <button type="submit" class="btn_logout">
+        <img src="{{ asset('img/nav_logo/logout.svg') }}" alt="Logout" class="logout">
+
+    
+    </button></form></div>
+    <h1 class="create"><a href="{{ path('app_admin_new') }}">Create new</a></h1>
+   
+
+
+<div class="zone_tab">
+    <table class="tab">
+
+        {% for user in users %}
+            <div class="zone_info">
+                  <div class="info"><p>First Name:<span>{{ user.firstName }}</span></p></div>
+                <div class="info"><p>Last Name:<span>{{ user.lastName }}</span></p></div>
+                <div class="info"><p>Email:<span>{{ user.email }}</span></p></div>
+                <div class="info"><p>{{ user.roles ? user.roles|json_encode : '' }}</p></div>
+                <div class="info"><p>Solde:<span>{{ user.solde }} $</span></p></div>
+              
+                <div class="info">
+                  
+                  
+                     <div class="button"><h1> <a href="{{ path('app_admin_edit', {'id': user.id}) }}">edit</a></h1> </div>
+
+                     
+    {{ include('admin/_delete_form.html.twig') }}
+                </div>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+    </table>
+    </div>
+
+    
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ asset('css/profile.css') }}">  
+{% block body %}
+
+
+<div class="contain">
+<div class="left">
+        {% include 'composant/nav.html.twig' %}
+    </div>
+
+    <div class="right">
+        <div class="welcome">
+            <h1>Welcome {{user.firstname}}</h1>
+        </div>
+    <div class="zone_profil">
+           <div class="title">
+            <h1>Your profile</h1>
+        </div>
+        <div class="full_name">
+            <h1>{{user.lastname}} {{user.firstname}}</h1>
+        </div>
+        <div class="zone_info">
+  <h1>Last Name</h1>
+  <div class="contain_info">
+   <h2>{{user.lastname}}</h2>
+   </div>
+</div>
+ <div class="zone_info">
+  <h1>First Name</h1>
+   <div class="contain_info">
+   <h2>{{user.firstname}}</h2>
+   </div>
+</div>
+ <div class="zone_info">
+  <h1>Email</h1>
+   <div class="contain_info">
+   <h2>{{user.email}} </h2>
+   </div>
+</div>
+
+
+    </div>
+        </div>
+
+       
+</div>
+{% endblock %}
+
+

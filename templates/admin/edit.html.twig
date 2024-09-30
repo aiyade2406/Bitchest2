@@ -1,0 +1,12 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="{{ asset('css/edit_admin.css') }}">  
+{% block body %}
+<div class="contain">
+    <h1>Update User</h1>
+    <div class="zone_form">
+         {{ include('admin/_form.html.twig', {'button_label': 'Update'}) }}
+            <h1 class="back_to_list">  <a href="{{ path('app_admin_index') }}">back to list</a></h1>
+    </div>
+
+</div>
+{% endblock %}

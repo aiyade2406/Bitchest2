@@ -1,0 +1,129 @@
+
+ <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">  
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block body %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="contain">
+    <div class="left">
+        {% include 'composant/nav.html.twig' %}
+    </div>
+
+    <div class="right">
+        
+        <div class="zone_dashboard">
+            <div class="left_dashboard">
+                <div class="zone_balance">
+                    <div class="zone_texte_balance">
+                        <h1>Balance<h1>
+                            <h2>{{user.solde}}<span>$</span></h2>
+                        </div>
+                </div>
+                 <div class="assets">
+                    <div class="title_asset">
+                        <h1>Asset</h1><p><a href="{{ path('app_portfolio') }}" class="see_all">See All Assets</a></p>
+                    </div>
+ {% for wallet in user_wallet|slice(0, 4) %}
+    <div class="this_asset">
+        <span class="mini_zone_crypto">
+          {% if wallet.cryptos.name == "Bitcoin" %}
+                <img src="{{ asset('img/logo/bitcoin-btc-logo.png') }}">
+            {% elseif wallet.cryptos.name == "Ethereum" %}
+                <img src="{{ asset('img/logo/ethereum-eth-logo.png') }}">
+            {% elseif wallet.cryptos.name == "Ripple" %}
+                <img src="{{ asset('img/logo/xrp-xrp-logo.png') }}">
+            {% elseif wallet.cryptos.name == "Bitcoin Cash" %}
+                <img src="{{ asset('img/logo/bitcoin-cash-bch-logo.png') }}">
+            {% elseif wallet.cryptos.name == "Cardano" %}
+                <img src="{{ asset('img/logo/cardano-ada-logo.png') }}">
+            {% elseif wallet.cryptos.name == "Litecoin" %}
+                <img src="{{ asset('img/logo/litecoin-ltc-logo.png') }}">
+            {% elseif wallet.cryptos.name == "NEM" %}
+                <img src="{{ asset('img/logo/nem-xem-logo.png') }}">
+            {% elseif wallet.cryptos.name == "Stellar" %}
+                <img src="{{ asset('img/logo/stellar-xlm-logo.png') }}">
+            {% elseif wallet.cryptos.name == "IOTA" %}
+                <img src="{{ asset('img/logo/iota-iota-logo.png') }}">
+            {% elseif wallet.cryptos.name == "Dash" %}
+                <img src="{{ asset('img/logo/dash-dash-logo.png') }}">
+            {% endif %}
+        </span>
+        <h2>{{ wallet.cryptos.name }}</h2>
+        <span class="mini_zone_price">
+            <h3>Total: {{ wallet.quantity }}</h3>
+            <h3>Value: {{ wallet.quantity * wallet.cryptos.price }}</h3>
+        </span>
+         <span class="mini_zone_price">
+
+
+        </span>
+    </div>
+{% endfor %}
+
+
+                </div>
+            </div>
+
+            <div class="right_dashboard">
+                
+                <div class="info1">
+                    <div class="profit">
+                        <h1>Profit</h1>
+                        <h2>{{profit}}$</h2>
+                    </div>
+                    <div class="profit">
+                        <h1>Invested</h1>
+                        <h2>{{ invested}}$</h2>
+                    </div>
+                </div>
+
+              
+                
+            </div>
+           
+        </div>
+         <div class="zone_price_crypto"> 
+           <div class="top_crypto"><h1>
+Top crypto on the market</h1></div>
+             <canvas id="myChart"></canvas>
+</div>
+
+<script>
+  const ctx = document.getElementById('myChart');
+  const bitcoinData = {{ dataB|json_encode|raw }};
+  const ethereumData = {{ dataE|json_encode|raw }};  
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['30 Days', '7 Days', '24 Hours'],  
+      datasets: [{
+        label: 'Bitcoin',
+        data: bitcoinData,
+        backgroundColor: '#7662EA',
+        borderColor: '#7662EA',
+        borderWidth: 2
+      },{
+        label: 'Ethereum',
+        data: ethereumData,
+        backgroundColor: '#459CED',
+        borderColor: '#459CED',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+                </div>
+    </div>
+</div>
+
+{% endblock %}
+

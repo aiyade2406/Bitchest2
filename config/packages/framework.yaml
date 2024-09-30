@@ -1,13 +1,12 @@
-# see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
     secret: '%env(APP_SECRET)%'
-    #csrf_protection: true
-
-    # Note that the session will be started ONLY if you read or write from it.
+    default_locale: en
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        fallbacks:
+            - en
     session: true
-
-    #esi: true
-    #fragments: true
+    # Vous pouvez ajouter d'autres configurations ici selon vos besoins
 
 when@test:
     framework:

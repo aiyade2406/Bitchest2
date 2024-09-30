@@ -1,0 +1,136 @@
+@font-face {
+    font-family: 'Celias';
+    src: url('/fonts/Celias.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Celias', sans-serif;
+    background-image: black;
+    background-color: #ECEFF3;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.form_page1 {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 400px;
+}
+
+.form_page1 input {
+    width: 80%;
+    display: flex;
+    height: 44px;
+    border: #E0E3E8 1px solid;
+}
+
+.zone_input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.zone_input .inputinfo {
+    font-size: 12px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 100%;
+}
+
+.zone_titre_sign {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.zone_bouton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.bouton-submit {
+    color: #38618C;
+    height: 45px;
+    background-color: #38618C;
+    width: 80%;
+    border: none;
+    border-radius: 8px;
+}
+
+.zone_title {
+    display: flex;
+    align-items: center;
+}
+
+.mini_logo {
+    width: 30px;
+    height: 30px;
+    background-color: #38618C;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bitchest {
+    color: black;
+    margin-left: 3px;
+}
+
+.cercle {
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    border-radius: 50%;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) and (orientation: portrait) {
+    .form_page1 {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 530px;
+        height: 380px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .form_page1 {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        height: 380px;
+    }
+
+    .zone_titre_sign {
+        font-size: 12px;
+    }
+
+    .zone_bouton {
+
+    }
+}

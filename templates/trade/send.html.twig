@@ -1,0 +1,140 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% block stylesheets %}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="{{ asset('css/trade_vente.css') }}">  
+{% endblock %}
+{% block body %}
+
+
+<div class="contain">
+  <div class="left">
+   
+        {% include 'composant/nav.html.twig' %}
+    </div>
+
+    <div class="right">
+
+        <div class="zone_crypto">
+        
+            <div class="zone_crypto_left">
+           
+                 <div class="price_crypto">
+                    <h1 class="price_crypto_title">Price Crypto</h1>
+                 
+        {% for crypto in allcrypto %}
+            <div class="crypto_zone">
+                <div class="logo_crypto">  {% if crypto.name == "Bitcoin" %}
+                <img src="{{ asset('img/logo/bitcoin-btc-logo.png') }}">
+            {% elseif crypto.name == "Ethereum" %}
+                <img src="{{ asset('img/logo/ethereum-eth-logo.png') }}">
+            {% elseif crypto.name == "Ripple" %}
+                <img src="{{ asset('img/logo/xrp-xrp-logo.png') }}">
+          {% elseif crypto.name|trim == "Bitcoin Cash" %}
+
+                <img src="{{ asset('img/logo/bitcoin_cash.png') }}">
+            {% elseif crypto.name == "Cardano" %}
+                <img src="{{ asset('img/logo/cardano-ada-logo.png') }}">
+            {% elseif crypto.name == "Litecoin" %}
+                <img src="{{ asset('img/logo/litecoin-ltc-logo.png') }}">
+            {% elseif crypto.name == "NEM" %}
+                <img src="{{ asset('img/logo/nem-xem-logo.png') }}">
+            {% elseif crypto.name == "Stellar" %}
+                <img src="{{ asset('img/logo/stellar-xlm-logo.png') }}">
+            {% elseif crypto.name == "IOTA" %}
+                <img src="{{ asset('img/logo/iota-iota-logo.png') }}">
+            {% elseif crypto.name == "Dash" %}
+                <img src="{{ asset('img/logo/dash-dash-logo.png') }}">
+            {% endif %}</div>
+                <div class="crypto_name">{{ crypto.name }}</div>
+                <div class="crypto_price_real">Price: ${{ crypto.price }}</div>
+                    <div class="crypto_cour" title="last 24 hours">Trade:  {% if crypto.name == "Bitcoin" %}
+        {{ cour_crypto.Bitcoin }}
+    {% elseif crypto.name == "Ethereum" %}
+        {{ cour_crypto.Ethereum }}
+    {% elseif crypto.name == "Ripple" %}
+        {{ cour_crypto.Ripple }}
+{% elseif crypto.name|trim == "Bitcoin Cash" %}
+    {% if cour_crypto['Bitcoin Cash'] is defined %}
+        {{ cour_crypto['Bitcoin Cash'] }}
+
+    {% endif %}
+    {% elseif crypto.name == "Cardano" %}
+        {{ cour_crypto.Cardano }}
+    {% elseif crypto.name == "Litecoin" %}
+        {{ cour_crypto.Litecoin }}
+    {% elseif crypto.name == "NEM" %}
+        {{ cour_crypto.NEM }}
+    {% elseif crypto.name == "Stellar" %}
+        {{ cour_crypto.Stellar }}
+    {% elseif crypto.name == "IOTA" %}
+        {{ cour_crypto.IOTA }}
+    {% elseif crypto.name == "Dash" %}
+        {{ cour_crypto.Dash }}
+    {% endif %}% </div>
+            </div>
+        {% endfor %}
+    </div>
+
+            
+           
+        </div>
+            <div class="zone_crypto_right">
+                <div class="zone_achat">
+                    <div class="action">
+                      <div class="bouton_action">
+    <h1><a href="{{ path('app_trade') }}">Buy</a></h1>
+</div>
+<div class="bouton_action">
+    <h1><a href="{{ path('app_trade_send') }}">Sell</a></h1>
+</div>
+<div class="bouton_action">
+ <h1><a href="{{path('app_exchange')}}">Exchange</a></h1>
+</div>
+                      
+                    </div>
+                    <div class="all_crypto">
+                        <div class="all_crypto1"><div class="usd"><div class="usd_contain"><img src="{{ asset('img/usd.png') }}"/></div></div><p>United States Dollar</p></div>
+                        <div class="all_crypto2">Balance: {{user.solde}} $</div>
+                    </div>
+                    
+                      <div class="trait"></div>
+          <div class="price">
+    {{ form_start(form) }}
+    
+    <div class="form_group">
+     
+        {{ form_widget(form.cryptos, {'attr': {'class': 'custom_input1'}}) }}
+    </div>
+
+    <div class="form_group">
+    
+       {{ form_widget(form.quantity, {'attr': {'class': 'custom_input2', 'placeholder': '0'}}) }}
+
+
+    </div>
+    </div>
+    <button type="submit" class="bouton_buy">Send</button>
+   
+
+    {{ form_end(form) }}
+
+
+    
+                    </div>
+                      {{ form_errors(form.quantity) }} 
+{% for message in app.flashes('error') %}
+    <div class="erreur">{{ message }}</div>
+{% endfor %}
+            
+                </div>
+           </div>   
+        </div>
+
+            
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}
